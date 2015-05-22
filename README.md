@@ -4,14 +4,37 @@
 
 <!-- MarkdownTOC depth=0 autolink=true bracket=round -->
 
-- [Why?](#why)
 - [Example use](#example-use)
+- [Why?](#why)
 - [Installation](#installation)
 - [TODO](#todo)
 - [Contributors](#contributors)
 
 <!-- /MarkdownTOC -->
 
+## Example use
+
+```ruby
+Rails.application.routes.draw do
+  ...
+  # This route will serve public/index.html at the /login URL path, and have
+  # URL helper named `login_path`:
+  get "/login", to: static("index.html")
+  # This route will serve public/index.html at the /register URL path, and
+  # have URL helper named `new_user_registration_path`:
+  get "/register", to: static("index.html"), as: :new_user_registration
+  ...
+end
+```
+
+`bin/rake routes` output for the above routes:
+
+```
+               Prefix  Verb  URI Pattern          Controller#Action
+                login  GET   /login(.:format)     static('index.html')
+new_user_registration  GET   /register(.:format)  static('index.html')
+```
+ 
 ## Why?
 
 `static(path_to_file)` helper method used to route to static files
@@ -38,29 +61,7 @@ nginx/httpd-configured rewrites):
   files directly for improved performance in production environments via symlinks
   and/or other artifacts generated at deploy time.
 
-## Example use
 
-```ruby
-Rails.application.routes.draw do
-  ...
-  # This route will serve public/index.html at the /login URL path, and have
-  # URL helper named `login_path`:
-  get "/login", to: static("index.html")
-  # This route will serve public/index.html at the /register URL path, and
-  # have URL helper named `new_user_registration_path`:
-  get "/register", to: static("index.html"), as: :new_user_registration
-  ...
-end
-```
-
-`bin/rake routes` output for the above routes:
-
-```
-               Prefix  Verb  URI Pattern          Controller#Action
-                login  GET   /login(.:format)     static('index.html')
-new_user_registration  GET   /register(.:format)  static('index.html')
-```
- 
 ## Installation
 
 1. Create `config/initializers/static_router.rb` with the entire contents of [static_router.rb](static_router.rb)
