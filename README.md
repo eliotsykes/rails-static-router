@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   # This route will serve public/index.html at the /login URL path, and have
   # URL helper named `login_path`:
   get "/login", to: static("index.html")
+
   # This route will serve public/index.html at the /register URL path, and
   # have URL helper named `new_user_registration_path`:
   get "/register", to: static("index.html"), as: :new_user_registration
