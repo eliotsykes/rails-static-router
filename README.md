@@ -38,8 +38,8 @@ new_user_registration  GET   /register(.:format)  static('index.html')
  
 ## Why?
 
-`static(path_to_file)` helper method used to route to static files
-from within `routes.rb`. Inspired by Rails' existing `redirect(...)` method.
+This introduces a `static(path_to_file)` helper method to route to static files
+from within `routes.rb`. It is inspired by Rails' existing `redirect(...)` method.
 
 Some benefits of this technique over alternatives (such as rack-rewrite,
 nginx/httpd-configured rewrites):
