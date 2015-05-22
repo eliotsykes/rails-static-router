@@ -2,13 +2,13 @@
 
 > Enjoy static routes in your Rails `config/routes.rb` (sorry its not a gem yet).
 
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC depth=0 autolink=true bracket=round -->
 
-- Why?
-- Example use
-- Installation
-- TODO
-- Contributors
+- [Why?](#why)
+- [Example use](#example-use)
+- [Installation](#installation)
+- [TODO](#todo)
+- [Contributors](#contributors)
 
 <!-- /MarkdownTOC -->
 
