@@ -72,7 +72,7 @@ nginx/httpd-configured rewrites):
 ```ruby
 module ActionDispatch
   module Routing
-    class StaticResponder < ActionDispatch::Routing::Endpoint
+    class StaticResponder < Endpoint
 
       attr_accessor :path, :file_handler
 

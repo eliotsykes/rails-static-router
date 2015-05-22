@@ -53,7 +53,7 @@
 # 3. Start using the `static(path)` method in your `config/routes.rb`
 module ActionDispatch
   module Routing
-    class StaticResponder < ActionDispatch::Routing::Endpoint
+    class StaticResponder < Endpoint
 
       attr_accessor :path, :file_handler
 
